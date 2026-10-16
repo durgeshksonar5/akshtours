@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Read authentic reviews and travel stories from adventurers who explored the world with Travexa.">
+    <meta name="keywords" content="travel, tour, booking, luxury travel, vacation, holiday, hotel booking, travel agency" />
+    <meta name="author" content="Travexa" />
+    <!-- Title -->
+    <title>Adventurer Reviews & Testimonials - Travexa</title>
+    <meta name="robots" content="index, follow">
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/aos.css" />
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <meta property="og:title" content="Adventurer Reviews & Testimonials - Travexa">
+    <meta property="og:description" content="Read authentic reviews and travel stories from adventurers who explored the world with Travexa.">
+    <meta property="og:type" content="website">
+</head>
+
+<body class="bg-light">
+    <!-- PRELOADER -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-inner">
+            <div class="spinner-ring"></div>
+            <img src="assets/images/logo.png" alt="Travexa Loading" class="preloader-logo">
+        </div>
+    </div>
+    <!-- TOP HEADER BAR -->
+    <div class="top-header d-none d-lg-block">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Left Side: Contact Info & Location -->
+                <div class="col-lg-7">
+                    <div class="d-flex align-items-center">
+                        <span class="top-header-link">
+                            <i class="fa-solid fa-location-dot top-header-icon" aria-hidden="true"></i>
+                            <span>Beverley Rd Brooklyn, New York 11226, USA.</span>
+                        </span>
+                        <span class="top-header-divider" aria-hidden="true"></span>
+                        <a href="mailto:info@travexa.com" class="top-header-link">
+                            <i class="fa-solid fa-envelope top-header-icon" aria-hidden="true"></i>
+                            <span>info@travexa.com</span>
+                        </a>
+                        <span class="top-header-divider" aria-hidden="true"></span>
+                        <a href="tel:+01882827777" class="top-header-link">
+                            <i class="fa-solid fa-phone top-header-icon" aria-hidden="true"></i>
+                            <span>+01 (88) 282 7777</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Right Side: Selectors & Socials -->
+                <div class="col-lg-5">
+                    <div class="d-flex align-items-center justify-content-end gap-3">
+                        <!-- Language Dropdown -->
+                        <div class="dropdown top-header-dropdown">
+                            <button class="btn btn-link dropdown-toggle text-decoration-none" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-globe me-1 top-header-icon" aria-hidden="true"></i> English
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+                                <li><a class="dropdown-item active" href="javascript:void(0)">English</a></li>
+                                <li><a class="dropdown-item" href="javascript:void(0)">French</a></li>
+                                <li><a class="dropdown-item" href="javascript:void(0)">German</a></li>
+                                <li><a class="dropdown-item" href="javascript:void(0)">Spanish</a></li>
+                            </ul>
+                        </div>
+                        <span class="top-header-divider" aria-hidden="true"></span>
+                        <!-- Currency Dropdown -->
+                        <div class="dropdown top-header-dropdown">
+                            <button class="btn btn-link dropdown-toggle text-decoration-none" type="button" id="currencyDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-coins me-1 top-header-icon" aria-hidden="true"></i> USD ($)
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="currencyDropdown">
+                                <li><a class="dropdown-item active" href="javascript:void(0)">USD ($)</a></li>
+                                <li><a class="dropdown-item" href="javascript:void(0)">EUR (€)</a></li>
+                                <li><a class="dropdown-item" href="javascript:void(0)">INR (₹)</a></li>
+                            </ul>
+                        </div>
+                        <span class="top-header-divider" aria-hidden="true"></span>
+                        <!-- Social Links -->
+                        <div class="top-header-social">
+                            <a href="javascript:void(0)" class="top-header-social-link" aria-label="Facebook" title="Facebook">
+                                <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                            </a>
+                            <a href="javascript:void(0)" class="top-header-social-link" aria-label="Instagram" title="Instagram">
+                                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                            </a>
+                            <a href="javascript:void(0)" class="top-header-social-link" aria-label="LinkedIn" title="LinkedIn">
+                                <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                            </a>
+                            <a href="javascript:void(0)" class="top-header-social-link" aria-label="YouTube" title="YouTube">
+                                <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="main-header header-glass" id="mainHeader">
+        <nav class="navbar navbar-expand-lg py-0" aria-label="Main navigation">
+            <div class="container py-2">
+                <!-- Brand Logo -->
+                <a class="brand-logo" href="index.html" aria-label="Travexa Homepage">
+                    <img src="assets/images/logo.png" alt="Travexa" class="brand-logo-img">
+                </a>
+                <!-- Mobile Toggler -->
+                <button class="navbar-toggler d-lg-none ms-auto me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMobileHeader" aria-controls="offcanvasMobileHeader" aria-label="Toggle navigation">
+                    <i class="fa-solid fa-bars-staggered"></i>
+                </button>
+                <!-- Desktop Navigation Menu -->
+                <div class="collapse navbar-collapse justify-content-center" id="mainNavbar">
+                    <ul class="navbar-nav align-items-lg-center">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="javascript:void(0)" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Home <i class="fa-solid fa-chevron-down ms-1 fs-8"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-home" aria-labelledby="homeDropdown">
+                                <a href="index.html" class="dropdown-item active">
+                                    <span>Home Travel Agency</span>
+                                </a>
+                                <a href="index-2.html" class="dropdown-item">
+                                    <span>Home Tour Booking</span>
+                                </a>
+                                <a href="index-3.html" class="dropdown-item">
+                                    <span>Home Adventure Travel</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="destinationsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Destinations <i class="fa-solid fa-chevron-down ms-1 fs-8"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-home" aria-labelledby="destinationsDropdown">
+                                <a href="destination.html" class="dropdown-item">
+                                    <span>Destination</span>
+                                </a>
+                                <a href="destination-details.html" class="dropdown-item">
+                                    <span>Destination Details</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="toursDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Tours <i class="fa-solid fa-chevron-down ms-1 fs-8"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-home" aria-labelledby="toursDropdown">
+                                <a href="tour.html" class="dropdown-item">
+                                    <span>Tour</span>
+                                </a>
+                                <a href="tour-details.html" class="dropdown-item">
+                                    <span>Tour Details</span>
+                                </a>
+                                <a href="tour-booking.html" class="dropdown-item">
+                                    <span>Tour Booking</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="hotelsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Hotels <i class="fa-solid fa-chevron-down ms-1 fs-8"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-home" aria-labelledby="hotelsDropdown">
+                                <a href="hotel.html" class="dropdown-item">
+                                    <span>Hotel</span>
+                                </a>
+                                <a href="hotel-details.html" class="dropdown-item">
+                                    <span>Hotel Details</span>
+                                </a>
+                                <a href="hotel-booking.html" class="dropdown-item">
+                                    <span>Hotel Booking</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown has-mega-menu">
+                            <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="megaMenuDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Pages <i class="fa-solid fa-chevron-down ms-1 fs-8"></i>
+                            </a>
+                            <div class="dropdown-menu mega-menu" aria-labelledby="megaMenuDropdown">
+                                <div class="row g-4">
+                                    <!-- Column 1: Company & Info -->
+                                    <div class="col-lg-4">
+                                        <div class="mega-menu-heading"><i class="fa-solid fa-compass me-2"></i> Company & Info</div>
+                                        <ul class="list-unstyled mb-0">
+                                            <li><a href="about-us.html" class="mega-menu-link"><i
+                                                        class="fa-solid fa-chevron-right fs-8"></i>
+                                                    About Us</a></li>
+                                            <li><a href="our-team.html" class="mega-menu-link"><i
+                                                        class="fa-solid fa-chevron-right fs-8"></i>
+                                                    Our Team</a></li>
+                                            <li><a href="team-details.html" class="mega-menu-link"><i
+                                                        class="fa-solid fa-chevron-right fs-8"></i> Team Details</a>
+                                            </li>
+                                            <li><a href="pricing.html" class="mega-menu-link"><i
+                                                        class="fa-solid fa-chevron-right fs-8"></i>
+                                                    Pricing</a></li>
+                                            <li><a href="testimonials.html" class="mega-menu-link"><i
+                                                        class="fa-solid fa-chevron-right fs-8"></i> Testimonials</a>
+                                            </li>
+                                            <li><a href="faq.html" class="mega-menu-link"><i
+                                                        class="fa-solid fa-chevron-right fs-8"></i>
+                                                    FAQ</a></li>
+                                            <li><a href="terms-conditions.html" class="mega-menu-link"><i
+                                                        class="fa-solid fa-chevron-right fs-8"></i> Terms &
+                                                    Condition</a></li>
+                                            <li><a href="privacy-policy.html" class="mega-menu-link"><i
+                                                        class="fa-solid fa-chevron-right fs-8"></i> Privacy Policy</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- Column 2: Account & Utility -->
+                                    <div class="col-lg-4">
+                                        <div class="mega-menu-heading"><i class="fa-solid fa-user-gear me-2"></i> Account & Utility</div>
+                                        <ul class="list-unstyled mb-0">
+                                            <li><a href="my-account.html" class="mega-menu-link"><i
+                                                        class="fa-solid fa-chevron-right fs-8"></i> My Account</a></li>
+                                            <li><a href="login.html" class="mega-menu-link"><i
+                                                        class="fa-solid fa-chevron-right fs-8"></i>
+                                                    Login</a></li>
+                                            <li><a href="register.html" class="mega-menu-link"><i
+                                                        class="fa-solid fa-chevron-right fs-8"></i>
+                                                    Register</a></li>
+                                            <li><a href="forgot-password.html" class="mega-menu-link"><i
+                                                        class="fa-solid fa-chevron-right fs-8"></i> Forgot Password</a>
+                                            </li>
+                                            <li><a href="coming-soon.html" class="mega-menu-link"><i
+                                                        class="fa-solid fa-chevron-right fs-8"></i> Coming Soon</a></li>
+                                            <li><a href="404.html" class="mega-menu-link"><i
+                                                        class="fa-solid fa-chevron-right fs-8"></i> 404
+                                                    Error Page</a></li>
+                                        </ul>
+                                    </div>
+                                    <!-- Column 3: Promo Card -->
+                                    <div class="col-lg-4">
+                                        <div class="mega-menu-card">
+                                            <div class="mega-menu-card-title">Special Travel Offers</div>
+                                            <p class="mega-menu-card-text">Explore handpicked luxury tours, hotels, and holiday packages at unbeatable prices.</p>
+                                            <a href="tour.html" class="btn btn-sm btn-light rounded-pill fw-bold text-dark px-3 py-2">
+                                                Explore Tours <i class="fa-solid fa-arrow-right ms-1"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="blogDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Blog <i class="fa-solid fa-chevron-down ms-1 fs-8"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-home" aria-labelledby="blogDropdown">
+                                <a href="blog.html" class="dropdown-item">
+                                    <span>Blog</span>
+                                </a>
+                                <a href="blog-detail.html" class="dropdown-item">
+                                    <span>Blog Detail</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact-us.html">Contact us</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Right Side Header Actions (Desktop Only) -->
+                <div class="header-actions d-none d-lg-flex">
+                    <!-- Search Icon Button -->
+                    <button type="button" class="action-btn" data-bs-toggle="modal" data-bs-target="#searchModal" aria-label="Search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    <!-- Book Now CTA Button -->
+                    <a href="tour-booking.html" class="btn btn-primary">
+                        <span>Book Now</span>
+                        <i class="fa-solid fa-paper-plane fs-7"></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MOBILE NAVIGATION MENU -->
+    <div class="offcanvas offcanvas-end offcanvas-mobile" tabindex="-1" id="offcanvasMobileHeader" aria-labelledby="offcanvasMobileHeaderLabel">
+        <div class="offcanvas-header">
+            <a class="brand-logo" href="index.html" id="offcanvasMobileHeaderLabel">
+                <img src="assets/images/logo.png" alt="Travexa" class="brand-logo-img">
+            </a>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column justify-content-between">
+            <div>
+                <!-- Search Form -->
+                <div class="mb-4">
+                    <div class="input-group">
+                        <input type="text" class="form-control rounded-pill pe-5" placeholder="Search tours, destinations..." aria-label="Search tours">
+                    </div>
+                </div>
+                <!-- Mobile Navigation Menu Links -->
+                <ul class="nav flex-column offcanvas-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-bs-toggle="collapse" href="#mobileHome" role="button" aria-expanded="false" aria-controls="mobileHome">
+                            Home <i class="fa-solid fa-chevron-down fs-8"></i>
+                        </a>
+                        <div class="collapse ps-3 py-2" id="mobileHome">
+                            <a href="index.html" class="d-block py-1 text-muted fs-7 active">Home Travel Agency</a>
+                            <a href="index-2.html" class="d-block py-1 text-muted fs-7">Home Tour Booking</a>
+                            <a href="index-3.html" class="d-block py-1 text-muted fs-7">Home Adventure Travel</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#mobileDestinations" role="button" aria-expanded="false" aria-controls="mobileDestinations">
+                            Destinations <i class="fa-solid fa-chevron-down fs-8"></i>
+                        </a>
+                        <div class="collapse ps-3 py-2" id="mobileDestinations">
+                            <a href="destination.html" class="d-block py-1 text-muted fs-7">Destination</a>
+                            <a href="destination-details.html" class="d-block py-1 text-muted fs-7">Destination
+                                Details</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#mobileTours" role="button" aria-expanded="false" aria-controls="mobileTours">
+                            Tours <i class="fa-solid fa-chevron-down fs-8"></i>
+                        </a>
+                        <div class="collapse ps-3 py-2" id="mobileTours">
+                            <a href="tour.html" class="d-block py-1 text-muted fs-7">Tour</a>
+                            <a href="tour-details.html" class="d-block py-1 text-muted fs-7">Tour Details</a>
+                            <a href="tour-booking.html" class="d-block py-1 text-muted fs-7">Tour Booking</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#mobileHotels" role="button" aria-expanded="false" aria-controls="mobileHotels">
+                            Hotels <i class="fa-solid fa-chevron-down fs-8"></i>
+                        </a>
+                        <div class="collapse ps-3 py-2" id="mobileHotels">
+                            <a href="hotel.html" class="d-block py-1 text-muted fs-7">Hotel</a>
+                            <a href="hotel-details.html" class="d-block py-1 text-muted fs-7">Hotel Details</a>
+                            <a href="hotel-booking.html" class="d-block py-1 text-muted fs-7">Hotel Booking</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#mobilePages" role="button" aria-expanded="false" aria-controls="mobilePages">
+                            Pages <i class="fa-solid fa-chevron-down fs-8"></i>
+                        </a>
+                        <div class="collapse ps-3 py-2" id="mobilePages">
+                            <a href="about-us.html" class="d-block py-1 text-muted fs-7">About Us</a>
+                            <a href="our-team.html" class="d-block py-1 text-muted fs-7">Our Team</a>
+                            <a href="team-details.html" class="d-block py-1 text-muted fs-7">Team Details</a>
+                            <a href="pricing.html" class="d-block py-1 text-muted fs-7">Pricing</a>
+                            <a href="testimonials.html" class="d-block py-1 text-muted fs-7">Testimonials</a>
+                            <a href="faq.html" class="d-block py-1 text-muted fs-7">FAQ</a>
+                            <a href="terms-conditions.html" class="d-block py-1 text-muted fs-7">Terms & Condition</a>
+                            <a href="privacy-policy.html" class="d-block py-1 text-muted fs-7">Privacy Policy</a>
+                            <a href="my-account.html" class="d-block py-1 text-muted fs-7">My Account</a>
+                            <a href="login.html" class="d-block py-1 text-muted fs-7">Login</a>
+                            <a href="register.html" class="d-block py-1 text-muted fs-7">Register</a>
+                            <a href="forgot-password.html" class="d-block py-1 text-muted fs-7">Forgot Password</a>
+                            <a href="coming-soon.html" class="d-block py-1 text-muted fs-7">Coming Soon</a>
+                            <a href="404.html" class="d-block py-1 text-muted fs-7">404 Error Page</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#mobileBlog" role="button" aria-expanded="false" aria-controls="mobileBlog">
+                            Blog <i class="fa-solid fa-chevron-down fs-8"></i>
+                        </a>
+                        <div class="collapse ps-3 py-2" id="mobileBlog">
+                            <a href="blog.html" class="d-block py-1 text-muted fs-7">Blog</a>
+                            <a href="blog-detail.html" class="d-block py-1 text-muted fs-7">Blog Detail</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact-us.html">Contact us</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Footer & Contact -->
+            <div>
+                <a href="contact-us.html" class="btn btn-primary w-100 justify-content-center mb-3">
+                    <span>Book Now</span>
+                    <i class="fa-solid fa-paper-plane fs-7"></i>
+                </a>
+                <div class="offcanvas-contact-box text-center">
+                    <div class="fw-bold mb-1 fs-7">Need Assistance?</div>
+                    <a href="tel:+919876543210" class="text-primary fw-bold fs-7 d-block">+91 98765 43210</a>
+                    <a href="mailto:info@travexa.com" class="text-muted fs-8">info@travexa.com</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FULLSCREEN LUXURY SEARCH MODAL -->
+    <div class="modal fade search-modal" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen m-0 p-0">
+            <div class="modal-content border-0 rounded-0">
+                <!-- Close Button -->
+                <button type="button" class="search-modal-close" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+                <div class="modal-body d-flex flex-column align-items-center justify-content-center text-center px-4">
+                    <div class="search-modal-content-wrap">
+                        <span class="search-modal-badge mb-3 d-inline-block">
+                            <i class="fa-solid fa-compass me-2 text-accent"></i>EXPLORE DESTINATIONS & TOURS
+                        </span>
+                        <h2 class="search-modal-title mb-4">Where would you like to explore?</h2>
+
+                        <form action="destination.html" method="GET" class="search-modal-input-group">
+                            <i class="fa-solid fa-magnifying-glass search-modal-icon"></i>
+                            <input type="text" name="search" class="form-control search-modal-input" placeholder="Search by destination, tour name, or keywords..." autocomplete="off">
+                            <button type="submit" class="search-modal-submit-btn" aria-label="Search Submit">
+                                <span>Search</span>
+                                <i class="fa-solid fa-arrow-right ms-2"></i>
+                            </button>
+                        </form>
+
+                        <div class="search-modal-tags mt-4 pt-2">
+                            <span class="search-tags-label">Popular Searches:</span>
+                            <div class="d-flex flex-wrap justify-content-center gap-2 mt-3">
+                                <a href="destination.html" class="search-tag-chip"><i
+                                        class="fa-solid fa-umbrella-beach me-1 text-accent"></i> Maldives Resort</a>
+                                <a href="destination.html" class="search-tag-chip"><i
+                                        class="fa-solid fa-mountain me-1 text-accent"></i>
+                                    Swiss Alps Tour</a>
+                                <a href="destination.html" class="search-tag-chip"><i
+                                        class="fa-solid fa-water me-1 text-accent"></i>
+                                    Bali Beach Villa</a>
+                                <a href="destination.html" class="search-tag-chip"><i
+                                        class="fa-solid fa-sun me-1 text-accent"></i>
+                                    Dubai Desert Safari</a>
+                                <a href="destination.html" class="search-tag-chip"><i
+                                        class="fa-solid fa-landmark me-1 text-accent"></i>
+                                    Paris Romance</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BREADCRUMB -->
+    <section class="tb-destination-hero position-relative overflow-hidden">
+        <img src="assets/images/destinations/dubai.png" alt="Client Testimonials" class="tb-dest-hero-bg position-absolute top-0 start-0 w-100 h-100 object-fit-cover">
+        <div class="tb-dest-hero-overlay position-absolute top-0 start-0 w-100 h-100"></div>
+        <svg class="tb-flight-path-svg position-absolute top-50 start-50 translate-middle w-100 h-100" viewBox="0 0 1440 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M-100 200 C300 50, 700 350, 1540 150" stroke="rgba(255, 107, 0, 0.2)" stroke-width="2"
+                stroke-dasharray="8 8" />
+        </svg>
+        <div class="container position-relative z-2">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-xl-7">
+                    <div class="tb-dest-header-card text-center" data-aos="zoom-in" data-aos-duration="800">
+                        <h1 class="fw-bold text-white mb-2">
+                            Client <span class="text-accent position-relative d-inline-block">Testimonials
+                                <svg class="position-absolute bottom-0 start-0 w-100 heading-underline-svg"
+                                    viewBox="0 0 200 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2 10C50 2 150 2 198 10" stroke="var(--accent)" stroke-width="4"
+                                        stroke-linecap="round"></path>
+                                </svg>
+                            </span>
+                        </h1>
+                        <p class="text-white-50 fs-6 mb-4">
+                            Don't just take our word for it. Read the real stories and unforgettable experiences from our global community of travelers.
+                        </p>
+                        <nav aria-label="breadcrumb">
+                            <div class="tb-flight-breadcrumb d-inline-flex align-items-center justify-content-center gap-2 gap-sm-3">
+                                <a href="index.html" class="tb-bc-item">
+                                    <div class="tb-bc-icon"><i class="fa-solid fa-house"></i></div>
+                                    <span>Home</span>
+                                </a>
+                                <div class="tb-bc-divider position-relative">
+                                    <div class="tb-bc-line"></div>
+                                    <i class="fa-solid fa-plane tb-bc-plane text-accent position-absolute top-50 start-50 translate-middle"></i>
+                                </div>
+                                <div class="tb-bc-item active" aria-current="page">
+                                    <div class="tb-bc-icon"><i class="fa-solid fa-star"></i></div>
+                                    <span>Testimonials</span>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS WALL SECTION -->
+    <section class="testimonials-wall-section pt-5 pb-5 pb-lg-7 mb-5 bg-light position-relative z-1 overflow-hidden">
+        <div class="container py-4 position-relative z-1">
+            <div class="row mb-5 align-items-center" data-aos="fade-up">
+                <div class="col-lg-6 text-center text-lg-start mb-4 mb-lg-0">
+                    <div class="section-script-tag mb-2">Real Stories</div>
+                    <h2 class="section-main-heading mb-0">
+                        What Our <span class="text-accent">Travelers Say</span>
+                    </h2>
+                </div>
+                <!-- Interactive Rating Pill -->
+                <div class="col-lg-6 text-center text-lg-end">
+                    <div class="d-inline-flex align-items-center gap-2 bg-white p-2 pe-3 rounded-pill shadow-sm border border-light max-w-100">
+                        <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center fs-4 fw-bold flex-shrink-0" style="width: 50px; height: 50px;">
+                            4.9
+                        </div>
+                        <div class="text-start">
+                            <div class="text-warning fs-8 mb-1 text-nowrap">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                            <span class="text-muted fw-bold text-uppercase text-nowrap" style="font-size: 11px; letter-spacing: 0.2px;">Based on 12,500+ Reviews</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Reviews Grid -->
+            <div class="row g-4 mb-5">
+                <!-- Review 1 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="review-wall-card bg-white p-4 p-xl-5 rounded-4 shadow-sm border border-light h-100 position-relative overflow-hidden">
+                        <i class="fa-solid fa-quote-right review-quote-watermark text-primary opacity-10"></i>
+                        <div class="d-flex align-items-center gap-3 mb-4">
+                            <img src="assets/images/team/women-1.png" alt="User" class="review-user-img rounded-circle object-fit-cover shadow-sm" loading="lazy" decoding="async">
+                            <div>
+                                <h4 class="fw-bold text-dark fs-6 mb-1">Sarah Jenkins</h4>
+                                <span class="badge bg-success bg-opacity-10 text-success rounded-pill fs-9 px-2 py-1"><i
+                                        class="fa-solid fa-circle-check me-1"></i>Verified Traveler</span>
+                            </div>
+                        </div>
+                        <div class="text-warning fs-8 mb-3">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <h5 class="fw-bold text-primary fs-5 mb-2">"An Absolute Dream Vacation!"</h5>
+                        <p class="text-muted fs-7 line-height-lg fst-italic mb-0">
+                            "Travexa completely exceeded our expectations. Our honeymoon in the Maldives was flawless. The overwater villa was stunning, and the 24/7 concierge made everything totally stress-free. Highly recommended!"
+                        </p>
+                    </div>
+                </div>
+                <!-- Review 2 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="review-wall-card bg-white p-4 p-xl-5 rounded-4 shadow-sm border border-light h-100 position-relative overflow-hidden review-card-stagger">
+                        <i class="fa-solid fa-quote-right review-quote-watermark text-accent opacity-10"></i>
+                        <div class="d-flex align-items-center gap-3 mb-4">
+                            <img src="assets/images/team/men-1.png" alt="User" class="review-user-img rounded-circle object-fit-cover shadow-sm" loading="lazy" decoding="async">
+                            <div>
+                                <h4 class="fw-bold text-dark fs-6 mb-1">Michael Chen</h4>
+                                <span class="badge bg-success bg-opacity-10 text-success rounded-pill fs-9 px-2 py-1"><i
+                                        class="fa-solid fa-circle-check me-1"></i>Verified Traveler</span>
+                            </div>
+                        </div>
+                        <div class="text-warning fs-8 mb-3">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+                        <h5 class="fw-bold text-primary fs-5 mb-2">"Seamless & Stress-Free"</h5>
+                        <p class="text-muted fs-7 line-height-lg fst-italic mb-0">
+                            "From the moment we booked our Swiss Alps tour, the customer service was phenomenal. Every transfer, hotel, and excursion was flawlessly organized. We didn't have to worry about a single detail."
+                        </p>
+                    </div>
+                </div>
+                <!-- Review 3 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="review-wall-card bg-white p-4 p-xl-5 rounded-4 shadow-sm border border-light h-100 position-relative overflow-hidden">
+                        <i class="fa-solid fa-quote-right review-quote-watermark text-secondary opacity-10"></i>
+                        <div class="d-flex align-items-center gap-3 mb-4">
+                            <img src="assets/images/team/men-2.png" alt="User" class="review-user-img rounded-circle object-fit-cover shadow-sm" loading="lazy" decoding="async">
+                            <div>
+                                <h4 class="fw-bold text-dark fs-6 mb-1">David & Emma</h4>
+                                <span class="badge bg-success bg-opacity-10 text-success rounded-pill fs-9 px-2 py-1"><i
+                                        class="fa-solid fa-circle-check me-1"></i>Verified Traveler</span>
+                            </div>
+                        </div>
+                        <div class="text-warning fs-8 mb-3">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <h5 class="fw-bold text-primary fs-5 mb-2">"The Best Agency Out There"</h5>
+                        <p class="text-muted fs-7 line-height-lg fst-italic mb-0">
+                            "We compared several luxury agencies for our anniversary in Paris, and Travexa gave us the best value by far. The hotel upgrades and skip-the-line passes were the absolute highlight of our trip."
+                        </p>
+                    </div>
+                </div>
+                <!-- Review 4 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="review-wall-card bg-white p-4 p-xl-5 rounded-4 shadow-sm border border-light h-100 position-relative overflow-hidden review-card-stagger">
+                        <i class="fa-solid fa-quote-right review-quote-watermark text-accent opacity-10"></i>
+                        <div class="d-flex align-items-center gap-3 mb-4">
+                            <img src="assets/images/team/women-1.png" alt="User" class="review-user-img rounded-circle object-fit-cover shadow-sm" loading="lazy" decoding="async">
+                            <div>
+                                <h4 class="fw-bold text-dark fs-6 mb-1">Elena Rostova</h4>
+                                <span class="badge bg-success bg-opacity-10 text-success rounded-pill fs-9 px-2 py-1"><i
+                                        class="fa-solid fa-circle-check me-1"></i>Verified Traveler</span>
+                            </div>
+                        </div>
+                        <div class="text-warning fs-8 mb-3">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <h5 class="fw-bold text-primary fs-5 mb-2">"Unforgettable Experience!"</h5>
+                        <p class="text-muted fs-7 line-height-lg fst-italic mb-0">
+                            "Our desert safari trip to Dubai was expertly planned from start to finish. Our private guide was knowledgeable, friendly, and truly cared about making our experience unique."
+                        </p>
+                    </div>
+                </div>
+                <!-- Review 5 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="review-wall-card bg-white p-4 p-xl-5 rounded-4 shadow-sm border border-light h-100 position-relative overflow-hidden">
+                        <i class="fa-solid fa-quote-right review-quote-watermark text-secondary opacity-10"></i>
+                        <div class="d-flex align-items-center gap-3 mb-4">
+                            <img src="assets/images/team/men-1.png" alt="User" class="review-user-img rounded-circle object-fit-cover shadow-sm" loading="lazy" decoding="async">
+                            <div>
+                                <h4 class="fw-bold text-dark fs-6 mb-1">James Patterson</h4>
+                                <span class="badge bg-success bg-opacity-10 text-success rounded-pill fs-9 px-2 py-1"><i
+                                        class="fa-solid fa-circle-check me-1"></i>Verified Traveler</span>
+                            </div>
+                        </div>
+                        <div class="text-warning fs-8 mb-3">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <h5 class="fw-bold text-primary fs-5 mb-2">"Flawless Luxury & Comfort"</h5>
+                        <p class="text-muted fs-7 line-height-lg fst-italic mb-0">
+                            "Travexa took care of every detail during our European vacation. The 5-star hotel accommodations and private driver service were exceptional. I will never travel without them again."
+                        </p>
+                    </div>
+                </div>
+                <!-- Review 6 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="review-wall-card bg-white p-4 p-xl-5 rounded-4 shadow-sm border border-light h-100 position-relative overflow-hidden review-card-stagger">
+                        <i class="fa-solid fa-quote-right review-quote-watermark text-primary opacity-10"></i>
+                        <div class="d-flex align-items-center gap-3 mb-4">
+                            <img src="assets/images/team/women-1.png" alt="User" class="review-user-img rounded-circle object-fit-cover shadow-sm" loading="lazy" decoding="async">
+                            <div>
+                                <h4 class="fw-bold text-dark fs-6 mb-1">Olivia Smith</h4>
+                                <span class="badge bg-success bg-opacity-10 text-success rounded-pill fs-9 px-2 py-1"><i
+                                        class="fa-solid fa-circle-check me-1"></i>Verified Traveler</span>
+                            </div>
+                        </div>
+                        <div class="text-warning fs-8 mb-3">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <h5 class="fw-bold text-primary fs-5 mb-2">"Above and Beyond"</h5>
+                        <p class="text-muted fs-7 line-height-lg fst-italic mb-0">
+                            "We had to make a last-minute change to our itinerary due to a flight delay, and the 24/7 concierge handled it within minutes. The support team is truly world-class."
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Pagination -->
+            <div class="tour-pagination" data-aos="fade-up">
+                <a href="javascript:void(0)" class="page-link-custom"><i class="fa-solid fa-chevron-left"></i></a>
+                <a href="javascript:void(0)" class="page-link-custom active">1</a>
+                <a href="javascript:void(0)" class="page-link-custom">2</a>
+                <a href="javascript:void(0)" class="page-link-custom">3</a>
+                <a href="javascript:void(0)" class="page-link-custom"><i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+            <!-- Submit Review CTA -->
+            <div class="mt-6 pt-5" data-aos="fade-up">
+                <div class="bg-primary rounded-4 p-4 p-md-5 position-relative overflow-hidden shadow-lg border border-white border-opacity-10">
+                    <div class="row align-items-center position-relative z-1">
+                        <div class="col-lg-8 mb-4 mb-lg-0 text-center text-lg-start">
+                            <h3 class="fw-bold text-white fs-2 mb-2">Share Your <span class="text-accent">Experience</span></h3>
+                            <p class="text-white-50 fs-6 mb-0">Have you recently traveled with Travexa? We would love to hear your story and feature your review on our wall.</p>
+                        </div>
+                        <div class="col-lg-4 text-center text-lg-end">
+                            <a href="contact-us.html" class="btn btn-primary">
+                                <i class="fa-solid fa-pen-to-square me-2"></i> <span>Write a Review</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer class="footer-area ft-bg position-relative">
+        <!-- Footer Top Wave Shape Divider -->
+        <div class="footer-shape-top">
+            <img src="assets/images/shape-bottom.png" alt="Wave Shape">
+        </div>
+        <div class="text-shape">travexa</div>
+        <div class="footer-widget">
+            <div class="container">
+                <div class="footer-widget-wrap pt-100 pb-50">
+                    <div class="row g-4">
+                        <div class="col-lg-4">
+                            <div class="footer-widget-box about-us">
+                                <a href="index.html" class="footer-logo">
+                                    <img src="assets/images/logo.png" alt="Travexa">
+                                </a>
+                                <p>
+                                    We are many variations of passages available but the majority have suffered alteration some looking at its layout believable.
+                                </p>
+                                <div class="footer-social-box mt-70">
+                                    <h4>Follow Us On</h4>
+                                    <ul class="footer-social">
+                                        <li><a href="javascript:void(0)" aria-label="Facebook"><i
+                                                    class="fa-brands fa-facebook-f"></i></a>
+                                        </li>
+                                        <li><a href="javascript:void(0)" aria-label="Twitter"><i
+                                                    class="fa-brands fa-x-twitter"></i></a>
+                                        </li>
+                                        <li><a href="javascript:void(0)" aria-label="LinkedIn"><i
+                                                    class="fa-brands fa-linkedin-in"></i></a>
+                                        </li>
+                                        <li><a href="javascript:void(0)" aria-label="YouTube"><i
+                                                    class="fa-brands fa-youtube"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="footer-contact">
+                                <div class="footer-contact-wrap">
+                                    <div class="footer-contact-item">
+                                        <div class="icon"><i class="fa-solid fa-phone"></i></div>
+                                        <div class="content">
+                                            <h5>Call Us</h5>
+                                            <a href="tel:+01882827777">+01 (88) 282 7777</a>
+                                        </div>
+                                    </div>
+                                    <div class="footer-contact-item">
+                                        <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+                                        <div class="content">
+                                            <h5>Mail Us</h5>
+                                            <a href="mailto:info@travexa.com">info@travexa.com</a>
+                                        </div>
+                                    </div>
+                                    <div class="footer-contact-item">
+                                        <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
+                                        <div class="content">
+                                            <h5>Our Address</h5>
+                                            <p>Milford, New York, USA</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6 col-lg-4">
+                                    <div class="footer-widget-box list">
+                                        <h4 class="footer-widget-title">Company</h4>
+                                        <ul class="footer-list">
+                                            <li><a href="about-us.html"><i class="fa fa-angle-double-right"></i> About
+                                                    Us</a></li>
+                                            <li><a href="faq.html"><i class="fa fa-angle-double-right"></i> FAQ's</a>
+                                            </li>
+                                            <li><a href="blog.html"><i class="fa fa-angle-double-right"></i> Update
+                                                    News</a></li>
+                                            <li><a href="contact-us.html"><i class="fa fa-angle-double-right"></i>
+                                                    Contact Us</a></li>
+                                            <li><a href="terms-conditions.html"><i class="fa fa-angle-double-right"></i>
+                                                    Terms Of Service</a>
+                                            </li>
+                                            <li><a href="privacy-policy.html"><i class="fa fa-angle-double-right"></i>
+                                                    Privacy policy</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-lg-4">
+                                    <div class="footer-widget-box list">
+                                        <h4 class="footer-widget-title">Popular Tour</h4>
+                                        <ul class="footer-list">
+                                            <li><a href="tour.html"><i class="fa fa-angle-double-right"></i> Solo
+                                                    Tour</a></li>
+                                            <li><a href="tour.html"><i class="fa fa-angle-double-right"></i> Family
+                                                    Tour</a></li>
+                                            <li><a href="tour.html"><i class="fa fa-angle-double-right"></i> Adventure
+                                                    Tour</a></li>
+                                            <li><a href="destination.html"><i class="fa fa-angle-double-right"></i>
+                                                    Beach Gateways</a></li>
+                                            <li><a href="tour.html"><i class="fa fa-angle-double-right"></i> Honeymoon
+                                                    Tour</a></li>
+                                            <li><a href="tour.html"><i class="fa fa-angle-double-right"></i> Group
+                                                    Tour</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="footer-widget-box">
+                                        <h4 class="footer-widget-title">Get In Touch</h4>
+                                        <div class="footer-newsletter mt-30">
+                                            <p>Subscribe Our Newsletter To Get Latest Update And News</p>
+                                            <div class="newsletter-form">
+                                                <form action="#" method="POST">
+                                                    <div class="form-group mb-0">
+                                                        <div class="form-icon">
+                                                            <i class="fa-solid fa-envelope"></i>
+                                                            <input type="email" class="form-control" placeholder="Your Email" required>
+                                                            <button class="theme-btn" type="submit" aria-label="Subscribe">
+                                                                <i class="fa-solid fa-paper-plane"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright text-center">
+                <p class="copyright-text">&copy; Copyright <span id="currentYear">2026</span> <a href="index.html">Travexa</a> All Rights Reserved.</p>
+            </div>
+        </div>
+        <!-- Scroll To Top Button -->
+        <button id="scrollToTopBtn" class="scroll-to-top" aria-label="Scroll to top">
+            <i class="fa-solid fa-arrow-up"></i>
+        </button>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/three.min.js"></script>
+    <script src="assets/js/gsap.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/aos.js"></script>
+    <script src="assets/js/typed.umd.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
