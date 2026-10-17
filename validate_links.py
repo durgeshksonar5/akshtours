@@ -10,6 +10,11 @@ html_files = [
     'testimonials.html',
     'tour-booking.html',
     'contact.html',
+    'tour-phuket.html',
+    'tour-kyoto.html',
+    'tour-dubai.html',
+    'tour-switzerland.html',
+    'tour-details.html',
     'destinations/destination-details.html'
 ]
 

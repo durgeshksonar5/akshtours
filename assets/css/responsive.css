@@ -103,6 +103,12 @@
         backdrop-filter: blur(20px) !important;
         -webkit-backdrop-filter: blur(20px) !important;
     }
+    .brand-logo-img {
+        max-height: 58px;
+    }
+    .offcanvas-header .brand-logo-img {
+        max-height: 60px;
+    }
     /* Fullscreen Search Modal Mobile Tweaks */
     .search-modal-close,
     .search-modal .modal-header .btn-close {
@@ -1398,6 +1404,29 @@
         height: 38px !important;
         font-size: 14px !important;
         z-index: 99 !important;
+    }
+    .floating-action-btn {
+        right: 15px !important;
+        width: 38px !important;
+        height: 38px !important;
+        z-index: 99 !important;
+    }
+    .floating-call {
+        bottom: 68px !important;
+        font-size: 15px !important;
+    }
+    .floating-whatsapp {
+        bottom: 116px !important;
+        font-size: 19px !important;
+    }
+    .travexa-floating-popup {
+        bottom: 165px !important;
+        right: 15px !important;
+        left: 15px !important;
+        width: auto !important;
+        max-width: 360px !important;
+        margin-left: auto !important;
+        margin-right: 0 !important;
     }
     /* Floating Exploration Icons Mobile */
     .blog-float-icon,

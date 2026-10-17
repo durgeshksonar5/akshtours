@@ -4120,6 +4120,282 @@ textarea.form-control {
 }
 
 /*====================================
+  FLOATING ACTION BUTTONS (WHATSAPP & CALL)
+====================================== */
+
+.floating-action-btn {
+    position: fixed;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    color: #ffffff !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none !important;
+    cursor: pointer;
+    z-index: 999;
+    box-sizing: border-box;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.floating-call {
+    bottom: 117px;
+    background: var(--primary);
+    box-shadow: 0 5px 15px rgba(0, 24, 83, 0.35);
+    font-size: 17px;
+}
+
+.floating-call:hover {
+    background: var(--accent);
+    color: #ffffff !important;
+    box-shadow: 0 8px 20px rgba(255, 107, 0, 0.45);
+    transform: translateY(-3px);
+}
+
+.floating-whatsapp {
+    bottom: 174px;
+    background: #25D366;
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+    font-size: 22px;
+}
+
+.floating-whatsapp:hover {
+    background: #1ebc57;
+    color: #ffffff !important;
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.55);
+    transform: translateY(-3px);
+}
+
+/*====================================
+  FLOATING LEAD CAPTURE POPUPS (WHATSAPP & CALL)
+====================================== */
+
+.travexa-floating-popup {
+    position: fixed;
+    bottom: 232px;
+    right: 30px;
+    width: 340px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 24, 83, 0.22), 0 0 0 1px rgba(0, 24, 83, 0.08);
+    z-index: 1050;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px) scale(0.96);
+    transform-origin: bottom right;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    overflow: hidden;
+    font-family: inherit;
+}
+
+.travexa-floating-popup.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.travexa-popup-header {
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    border-bottom: 1px solid rgba(0, 24, 83, 0.06);
+}
+
+.travexa-popup-header.header-whatsapp {
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    color: #ffffff;
+}
+
+.travexa-popup-header.header-call {
+    background: linear-gradient(135deg, var(--primary, #001853) 0%, #0d2875 100%);
+    color: #ffffff;
+}
+
+.travexa-popup-header-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.travexa-popup-badge {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+    color: #ffffff;
+    flex-shrink: 0;
+}
+
+.travexa-popup-title {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+    color: #ffffff;
+}
+
+.travexa-popup-subtitle {
+    font-size: 11px;
+    opacity: 0.9;
+    margin: 2px 0 0 0;
+    color: #ffffff;
+}
+
+.travexa-popup-close {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 50%;
+    opacity: 0.85;
+    transition: opacity 0.2s, background-color 0.2s;
+}
+
+.travexa-popup-close:hover {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.travexa-popup-body {
+    padding: 20px;
+}
+
+.travexa-popup-field {
+    margin-bottom: 14px;
+}
+
+.travexa-popup-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    color: #2b3954;
+    margin-bottom: 6px;
+}
+
+.travexa-popup-label span {
+    color: #e63946;
+}
+
+.travexa-popup-input-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.travexa-popup-input-wrap i {
+    position: absolute;
+    left: 14px;
+    color: #8b95a5;
+    font-size: 13px;
+    pointer-events: none;
+}
+
+.travexa-popup-input {
+    width: 100%;
+    height: 44px;
+    padding: 10px 14px 10px 38px;
+    border: 1px solid #dce2eb;
+    border-radius: 10px;
+    font-size: 13px;
+    color: #1a2332;
+    background-color: #f8fafc;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+.travexa-popup-input:focus {
+    outline: none;
+    border-color: var(--primary, #001853);
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(0, 24, 83, 0.1);
+}
+
+.header-whatsapp ~ .travexa-popup-body .travexa-popup-input:focus {
+    border-color: #25D366;
+    box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.15);
+}
+
+.travexa-popup-btn {
+    width: 100%;
+    height: 44px;
+    border: none;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.25s ease;
+    text-decoration: none !important;
+    box-sizing: border-box;
+}
+
+.travexa-popup-btn-wa {
+    background: #25D366;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.35);
+}
+
+.travexa-popup-btn-wa:hover:not(:disabled) {
+    background: #1ebc57;
+    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.45);
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.travexa-popup-btn-call {
+    background: var(--primary, #001853);
+    box-shadow: 0 4px 12px rgba(0, 24, 83, 0.3);
+}
+
+.travexa-popup-btn-call:hover:not(:disabled) {
+    background: var(--accent, #FF6B00);
+    box-shadow: 0 6px 16px rgba(255, 107, 0, 0.4);
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.travexa-popup-btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.travexa-popup-privacy {
+    text-align: center;
+    font-size: 11px;
+    color: #8b95a5;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.travexa-popup-status {
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.travexa-popup-status .alert {
+    padding: 8px 12px;
+    font-size: 12px;
+    margin-bottom: 0;
+    border-radius: 8px;
+}
+
+/*====================================
   WHY CHOOSE US CARDS & BANNER BACKGROUND
 ====================================== */
 
