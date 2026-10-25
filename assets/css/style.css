@@ -4266,6 +4266,49 @@ a.hero-floating-badge:hover .hero-badge-arrow {
     text-decoration: underline;
 }
 
+.developer-credit {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 10px;
+    vertical-align: middle;
+    font-size: inherit;
+    color: inherit;
+}
+
+.developer-credit .separator {
+    opacity: 0.45;
+    margin-right: 4px;
+}
+
+.footer-dev-logo {
+    height: 30px;
+    width: auto;
+    max-height: 32px;
+    object-fit: contain;
+    display: inline-block;
+    vertical-align: middle;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.4));
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.footer-dev-logo:hover {
+    transform: scale(1.05);
+    opacity: 0.95;
+}
+
+@media (max-width: 767px) {
+    .developer-credit {
+        display: flex;
+        justify-content: center;
+        margin-left: 0;
+        margin-top: 8px;
+    }
+    .developer-credit .separator {
+        display: none;
+    }
+}
+
 /*====================================
   SCROLL TO TOP BUTTON
 ====================================== */
