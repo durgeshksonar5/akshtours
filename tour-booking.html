@@ -36,26 +36,35 @@
             <img src="assets/images/aksh-logo-transferent.png" alt="Aksh Tours & Travels Loading" class="preloader-logo">
         </div>
     </div>
-    <!-- TOP HEADER BAR -->
+        <!-- TOP HEADER BAR -->
     <div class="top-header d-none d-lg-block">
         <div class="container">
             <div class="row align-items-center">
                 <!-- Left Side: Contact Info & Location -->
-                <div class="col-lg-7">
-                    <div class="d-flex align-items-center">
+                <div class="col-xl-8 col-lg-8">
+                    <div class="d-flex align-items-center flex-wrap">
                         <span class="top-header-link">
                             <i class="fa-solid fa-location-dot top-header-icon" aria-hidden="true"></i>
-                            <span>Shop no -1, Sai Samartha Nagar, Vishal Lawns Road, Vadgaon Maval 412106</span>
+                            <span>Vadgaon Maval 412106</span>
                         </span>
                         <span class="top-header-divider" aria-hidden="true"></span>
-                        <a href="tel:+918669652936" class="top-header-link">
+                        <a href="tel:+919175442121" class="top-header-link">
                             <i class="fa-solid fa-phone top-header-icon" aria-hidden="true"></i>
-                            <span>+91 86696 52936</span>
+                            <span>+91 91754 42121</span>
                         </a>
+                        <span class="top-header-divider d-none d-xl-inline-block" aria-hidden="true"></span>
+                        <span class="top-header-link top-header-service-highlight d-none d-xl-inline-flex">
+                            <i class="fa-solid fa-plane-circle-check top-header-icon text-accent" aria-hidden="true"></i>
+                            <span>From Airport Pick Up &amp; Drop to Completion — End-to-End Service by Aksh Tours</span>
+                        </span>
+                        <span class="top-header-link top-header-service-highlight d-none d-lg-inline-flex d-xl-none">
+                            <i class="fa-solid fa-plane-circle-check top-header-icon text-accent" aria-hidden="true"></i>
+                            <span>End-to-End Service</span>
+                        </span>
                     </div>
                 </div>
                 <!-- Right Side: Selectors & Socials -->
-                <div class="col-lg-5">
+                <div class="col-xl-4 col-lg-4">
                     <div class="d-flex align-items-center justify-content-end gap-3">
                         <!-- Social Links -->
                         <div class="top-header-social">
@@ -99,8 +108,84 @@
                         <li class="nav-item">
                             <a class="nav-link" href="about.html">About Us</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="destination.html">Destinations</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="destination.html" id="destinationsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span>Destinations</span>
+                                <i class="fa-solid fa-chevron-down ms-1 fs-9"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-destinations shadow-lg border-0" aria-labelledby="destinationsDropdown">
+                                <li>
+                                    <div class="dropdown-header px-2 pt-1 pb-1 text-uppercase text-muted fw-bold fs-9 letter-spacing-1">
+                                        <i class="fa-solid fa-fire text-danger me-1"></i> Featured Package
+                                    </div>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item destination-item destination-featured p-2 mb-2 rounded-3" href="dubai-tour-package.html">
+                                        <div class="destination-item-icon bg-accent text-white rounded-3 d-flex align-items-center justify-content-center shadow-xs">
+                                            <i class="fa-solid fa-city"></i>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                                <span class="destination-item-title fw-bold text-dark mb-0">Dubai Tour Package</span>
+                                                <span class="badge bg-danger text-white rounded-pill px-2 py-0.5 fs-9 fw-bold">Active Special</span>
+                                            </div>
+                                            <span class="destination-item-subtitle text-muted fs-8 d-block">05 Nights / 06 Days • Complete Package</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider my-1 opacity-25">
+                                </li>
+                                <li>
+                                    <div class="dropdown-header px-2 pt-1 pb-1 text-uppercase text-muted fw-bold fs-9 letter-spacing-1">
+                                        <i class="fa-solid fa-compass text-primary me-1"></i> Popular Destinations
+                                    </div>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item destination-item p-2 mb-1 rounded-3" href="destination.html">
+                                        <div class="destination-item-icon rounded-3 d-flex align-items-center justify-content-center">
+                                            <i class="fa-solid fa-earth-americas"></i>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <div class="destination-item-title fw-bold text-dark">All Destinations</div>
+                                            <span class="destination-item-subtitle text-muted fs-8 d-block">Explore all worldwide tours &amp; packages</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item destination-item p-2 mb-1 rounded-3" href="tour-switzerland.html">
+                                        <div class="destination-item-icon rounded-3 d-flex align-items-center justify-content-center">
+                                            <i class="fa-solid fa-mountain"></i>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <div class="destination-item-title fw-bold text-dark">Swiss Alps Experience</div>
+                                            <span class="destination-item-subtitle text-muted fs-8 d-block">Jungfraujoch &amp; Alpine Mountain Resorts</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item destination-item p-2 mb-1 rounded-3" href="tour-phuket.html">
+                                        <div class="destination-item-icon rounded-3 d-flex align-items-center justify-content-center">
+                                            <i class="fa-solid fa-umbrella-beach"></i>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <div class="destination-item-title fw-bold text-dark">Phuket Beach Escape</div>
+                                            <span class="destination-item-subtitle text-muted fs-8 d-block">Island Speedboat &amp; 4-Star Resort Stays</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item destination-item p-2 rounded-3" href="tour-kyoto.html">
+                                        <div class="destination-item-icon rounded-3 d-flex align-items-center justify-content-center">
+                                            <i class="fa-solid fa-torii-gate"></i>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <div class="destination-item-title fw-bold text-dark">Kyoto Cultural Discovery</div>
+                                            <span class="destination-item-subtitle text-muted fs-8 d-block">Ancient Temples &amp; Authentic Tea Ceremony</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="faq.html">FAQ</a>
@@ -157,7 +242,42 @@
                         <a class="nav-link" href="about.html">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="destination.html">Destinations</a>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <a class="nav-link flex-grow-1" href="destination.html">Destinations</a>
+                            <button class="btn btn-sm btn-link text-dark text-decoration-none px-3" type="button" data-bs-toggle="collapse" data-bs-target="#mobileDestSubmenu" aria-expanded="false" aria-controls="mobileDestSubmenu" aria-label="Toggle Destinations Menu">
+                                <i class="fa-solid fa-chevron-down fs-8"></i>
+                            </button>
+                        </div>
+                        <div class="collapse ps-2 pe-1 pb-2" id="mobileDestSubmenu">
+                            <ul class="nav flex-column border-start border-2 border-warning ps-2 ms-2 gap-1">
+                                <li class="nav-item">
+                                    <a class="nav-link py-2 px-2 d-flex align-items-center justify-content-between rounded-3 bg-warning-subtle text-dark fw-bold border border-warning" href="dubai-tour-package.html">
+                                        <span class="fs-8"><i class="fa-solid fa-city text-accent me-2"></i>Dubai Tour Package</span>
+                                        <span class="badge bg-danger text-white rounded-pill px-2 py-0.5 fs-9">Special</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link py-1 px-2 text-muted fs-8" href="destination.html">
+                                        <i class="fa-solid fa-earth-americas me-2 text-primary"></i>All Destinations
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link py-1 px-2 text-muted fs-8" href="tour-switzerland.html">
+                                        <i class="fa-solid fa-mountain me-2 text-primary"></i>Swiss Alps Experience
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link py-1 px-2 text-muted fs-8" href="tour-phuket.html">
+                                        <i class="fa-solid fa-umbrella-beach me-2 text-primary"></i>Phuket Beach Escape
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link py-1 px-2 text-muted fs-8" href="tour-kyoto.html">
+                                        <i class="fa-solid fa-torii-gate me-2 text-primary"></i>Kyoto Cultural Discovery
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="faq.html">FAQ</a>
@@ -179,10 +299,18 @@
                     <span>Book Now</span>
                     <i class="fa-solid fa-paper-plane fs-7"></i>
                 </a>
-                <div class="offcanvas-contact-box text-center">
+                                <div class="offcanvas-contact-box text-center">
                     <div class="fw-bold mb-1 fs-7">Need Assistance?</div>
-                    <a href="tel:+918669652936" class="text-primary fw-bold fs-7 d-block mb-1">+91 86696 52936</a>
+                    <a href="tel:+919175442121" class="text-primary fw-bold fs-7 d-block mb-1">+91 91754 42121</a>
+                    <span class="text-muted fs-8 d-block mb-1"><i class="fa-regular fa-clock me-1"></i>Calling Hours: 10:00 AM - 6:00 PM</span>
                     <span class="text-muted fs-8 d-block"><i class="fa-solid fa-location-dot me-1"></i>Vadgaon Maval 412106</span>
+                </div>
+                <div class="offcanvas-service-box text-center mt-3 p-3 rounded-4 shadow-xs">
+                    <span class="badge bg-primary text-white rounded-pill px-3 py-1 fs-9 fw-bold mb-1 d-inline-block">
+                        <i class="fa-solid fa-plane-circle-check me-1 text-accent"></i> End-to-End Service
+                    </span>
+                    <div class="fs-8 fw-bold text-dark mt-1">From Airport Pick Up &amp; Drop to Completion</div>
+                    <div class="fs-9 text-muted">Complete peace of mind by Aksh Tours</div>
                 </div>
             </div>
         </div>
@@ -204,32 +332,61 @@
                         </span>
                         <h2 class="search-modal-title mb-4">Where would you like to explore?</h2>
 
-                        <form action="destination.html" method="GET" class="search-modal-input-group">
-                            <i class="fa-solid fa-magnifying-glass search-modal-icon"></i>
-                            <input type="text" name="search" class="form-control search-modal-input" placeholder="Search by destination, tour name, or keywords..." autocomplete="off">
-                            <button type="submit" class="search-modal-submit-btn" aria-label="Search Submit">
-                                <span>Search</span>
-                                <i class="fa-solid fa-arrow-right ms-2"></i>
-                            </button>
+                                                <form id="searchModalForm" action="destination.html" method="GET" class="search-modal-form w-100">
+                            <div class="search-modal-multi-bar">
+                                <!-- Destination Field -->
+                                <div class="search-bar-field search-field-dest">
+                                    <span class="search-field-icon"><i class="fa-solid fa-location-dot"></i></span>
+                                    <div class="search-field-body">
+                                        <label class="search-field-label" for="modalSearchDest">Destination / Tour</label>
+                                        <input type="text" name="search" id="modalSearchDest" class="search-modal-input" placeholder="Where to? (e.g. Dubai, Bali)" autocomplete="off">
+                                    </div>
+                                </div>
+
+                                <div class="search-bar-separator d-none d-lg-block"></div>
+
+                                <!-- Full Name Field -->
+                                <div class="search-bar-field search-field-name">
+                                    <span class="search-field-icon"><i class="fa-solid fa-user"></i></span>
+                                    <div class="search-field-body">
+                                        <label class="search-field-label" for="modalSearchName">Your Name</label>
+                                        <input type="text" name="name" id="modalSearchName" class="search-modal-field" placeholder="Full Name" autocomplete="name" required>
+                                    </div>
+                                </div>
+
+                                <div class="search-bar-separator d-none d-lg-block"></div>
+
+                                <!-- Contact Number Field -->
+                                <div class="search-bar-field search-field-phone">
+                                    <span class="search-field-icon"><i class="fa-solid fa-phone"></i></span>
+                                    <div class="search-field-body">
+                                        <label class="search-field-label" for="modalSearchPhone">Contact No</label>
+                                        <input type="tel" name="phone" id="modalSearchPhone" class="search-modal-field" placeholder="WhatsApp / Phone" autocomplete="tel" required>
+                                    </div>
+                                </div>
+
+                                <!-- Search Submit Button -->
+                                <button type="submit" id="searchModalSubmitBtn" class="search-modal-submit-btn" aria-label="Search Submit">
+                                    <span>Search</span>
+                                    <i class="fa-solid fa-arrow-right ms-1"></i>
+                                </button>
+                            </div>
+                            <div id="searchModalStatus" class="search-modal-status mt-3 text-center" style="display: none;"></div>
                         </form>
 
                         <div class="search-modal-tags mt-4 pt-2">
                             <span class="search-tags-label">Popular Searches:</span>
                             <div class="d-flex flex-wrap justify-content-center gap-2 mt-3">
-                                <a href="destination.html" class="search-tag-chip"><i
-                                        class="fa-solid fa-umbrella-beach me-1 text-accent"></i> Maldives Resort</a>
-                                <a href="destination.html" class="search-tag-chip"><i
-                                        class="fa-solid fa-mountain me-1 text-accent"></i>
-                                    Swiss Alps Tour</a>
-                                <a href="destination.html" class="search-tag-chip"><i
-                                        class="fa-solid fa-water me-1 text-accent"></i>
-                                    Bali Beach Villa</a>
-                                <a href="destination.html" class="search-tag-chip"><i
-                                        class="fa-solid fa-sun me-1 text-accent"></i>
-                                    Dubai Desert Safari</a>
-                                <a href="destination.html" class="search-tag-chip"><i
-                                        class="fa-solid fa-landmark me-1 text-accent"></i>
-                                    Paris Romance</a>
+                                <a href="javascript:void(0)" class="search-tag-chip" data-search="Maldives Resort"><i
+                    class="fa-solid fa-umbrella-beach me-1 text-accent"></i> Maldives Resort</a>
+                                <a href="javascript:void(0)" class="search-tag-chip" data-search="Swiss Alps Tour"><i class="fa-solid fa-mountain me-1 text-accent"></i>
+                  Swiss Alps Tour</a>
+                                <a href="javascript:void(0)" class="search-tag-chip" data-search="Bali Beach Villa"><i class="fa-solid fa-water me-1 text-accent"></i>
+                  Bali Beach Villa</a>
+                                <a href="javascript:void(0)" class="search-tag-chip" data-search="Dubai Desert Safari"><i class="fa-solid fa-sun me-1 text-accent"></i>
+                  Dubai Desert Safari</a>
+                                <a href="javascript:void(0)" class="search-tag-chip" data-search="Paris Romance"><i class="fa-solid fa-landmark me-1 text-accent"></i>
+                  Paris Romance</a>
                             </div>
                         </div>
                     </div>
@@ -514,8 +671,12 @@
                             <span class="badge bg-light text-primary border rounded-pill px-2 py-1 fs-9 fw-semibold">Selected</span>
                         </div>
                         <div class="d-flex justify-content-between text-muted fs-7 mb-2">
-                            <span>Airport SUV Transfer</span>
+                            <span>Airport Pickup &amp; Drop to Completion</span>
                             <span class="badge bg-light text-primary border rounded-pill px-2 py-1 fs-9 fw-semibold">Included</span>
+                        </div>
+                        <div class="d-flex justify-content-between text-muted fs-7 mb-2">
+                            <span>End-to-End Service by Aksh Tours</span>
+                            <span class="badge bg-light text-success border rounded-pill px-2 py-1 fs-9 fw-semibold">Guaranteed</span>
                         </div>
                         <div class="d-flex justify-content-between text-muted fs-7 mb-2">
                             <span>Medical Protection Plan</span>
@@ -542,6 +703,9 @@
                             </div>
                         </div>
                         <div class="d-flex flex-column gap-2 text-muted fs-8 border-top border-light pt-3">
+                            <div class="d-flex align-items-center gap-2">
+                                <i class="fa-solid fa-plane-circle-check text-accent"></i> From Airport Pick Up &amp; Drop to Completion
+                            </div>
                             <div class="d-flex align-items-center gap-2">
                                 <i class="fa-solid fa-lock text-success"></i> 256-Bit SSL Encrypted Payment
                             </div>
@@ -574,10 +738,14 @@
                                 <a href="index.html" class="footer-logo">
                                     <img src="assets/images/aksh-logo-transferent.png" alt="Aksh Tours &amp; Travels">
                                 </a>
-                                <p>
-                                    We are many variations of passages available but the majority have suffered alteration some looking at its layout believable.
+                                                                <p>
+                                    From airport pick up and drop to completion — end-to-end service by Aksh Tours &amp; Travels. We create seamless, personalized holiday experiences tailored to your dreams.
                                 </p>
-                                <div class="footer-social-box mt-70">
+                                <div class="footer-service-pill d-inline-flex align-items-center gap-2 px-3 py-1.5 rounded-pill mb-3">
+                                    <i class="fa-solid fa-plane-circle-check text-accent"></i>
+                                    <span><strong>End-to-End Service:</strong> Airport Pick Up &amp; Drop to Completion</span>
+                                </div>
+                                <div class="footer-social-box mt-4">
                                     <h4>Follow Us On</h4>
                                     <ul class="footer-social">
                                         <li><a href="javascript:void(0)" aria-label="Facebook"><i
@@ -602,7 +770,8 @@
                                         <div class="icon"><i class="fa-solid fa-phone"></i></div>
                                         <div class="content">
                                             <h5>Call Us</h5>
-                                            <a href="tel:+918669652936">+91 86696 52936</a>
+                                            <a href="tel:+919175442121">+91 91754 42121</a>
+                                            <span class="d-block text-white-50 fs-9 mt-1"><i class="fa-regular fa-clock me-1"></i>10:00 AM - 6:00 PM</span>
                                         </div>
                                     </div>
                                     <div class="footer-contact-item">
@@ -687,10 +856,10 @@
             </div>
         </div>
         <!-- Floating Action Buttons (WhatsApp & Call) -->
-        <a href="https://wa.me/918669652936" class="floating-action-btn floating-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat with Aksh Tours &amp; Travels on WhatsApp" title="Chat on WhatsApp">
+        <a href="https://wa.me/919175442121" class="floating-action-btn floating-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat with Aksh Tours &amp; Travels on WhatsApp" title="Chat on WhatsApp">
             <i class="fa-brands fa-whatsapp"></i>
         </a>
-        <a href="tel:+918669652936" class="floating-action-btn floating-call" aria-label="Call Aksh Tours &amp; Travels" title="Call Us">
+        <a href="tel:+919175442121" class="floating-action-btn floating-call" aria-label="Call Aksh Tours &amp; Travels" title="Call Us">
             <i class="fa-solid fa-phone"></i>
         </a>
         <!-- Scroll To Top Button -->

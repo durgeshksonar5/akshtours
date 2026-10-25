@@ -14,8 +14,8 @@
     'use strict';
 
     const LEADS_API_ENDPOINT = 'https://leadsmanagment.hindustandigitalservices.com/api/forms/submit/76c33825-3e03-4493-a025-cbd99b159aee';
-    const OFFICIAL_WHATSAPP_NUMBER = '918669652936';
-    const OFFICIAL_PHONE_NUMBER = '+918669652936';
+    const OFFICIAL_WHATSAPP_NUMBER = '919175442121';
+    const OFFICIAL_PHONE_NUMBER = '+919175442121';
 
     /**
      * Submit lead payload to Leads Management API
@@ -76,7 +76,7 @@
                         </div>
                         <div>
                             <h3 id="travexaWaTitle" class="travexa-popup-title">Chat on WhatsApp</h3>
-                            <p class="travexa-popup-subtitle">Aksh Tours &amp; Travels</p>
+                            <p class="travexa-popup-subtitle">+91 91754 42121 • Aksh Tours &amp; Travels</p>
                         </div>
                     </div>
                     <button type="button" class="travexa-popup-close" aria-label="Close popup" data-close-popup>&times;</button>
@@ -118,7 +118,7 @@
                         </div>
                         <div>
                             <h3 id="travexaCallTitle" class="travexa-popup-title">Speak With Our Expert</h3>
-                            <p class="travexa-popup-subtitle">+91 86696 52936 • Aksh Tours</p>
+                            <p class="travexa-popup-subtitle">+91 91754 42121 • 10:00 AM - 6:00 PM</p>
                         </div>
                     </div>
                     <button type="button" class="travexa-popup-close" aria-label="Close popup" data-close-popup>&times;</button>
@@ -352,7 +352,7 @@
                             <i class="fa-solid fa-circle-check me-1"></i> Details received successfully!
                         </div>
                         <a href="${telUrl}" id="callDirectClickBtn" class="travexa-popup-btn travexa-popup-btn-call mt-2 text-white">
-                            <span>Call Now: +91 86696 52936</span>
+                            <span>Call Now: +91 91754 42121</span>
                             <i class="fa-solid fa-phone"></i>
                         </a>
                         <p class="text-muted small text-center mt-2 mb-0" style="font-size: 10px;">
@@ -472,7 +472,7 @@
                         <i class="fa-solid fa-triangle-exclamation fs-3 text-danger"></i>
                         <div>
                             <h5 class="fw-bold text-danger mb-1">Submission Failed</h5>
-                            <p class="mb-0 fs-7 text-dark">${res.error} Your entered details have been preserved. You can also call us directly at <strong>+91 86696 52936</strong>.</p>
+                            <p class="mb-0 fs-7 text-dark">${res.error} Your entered details have been preserved. You can also call us directly at <strong>+91 91754 42121</strong>.</p>
                         </div>
                     </div>
                 `;
@@ -625,7 +625,7 @@
                         <i class="fa-solid fa-triangle-exclamation fs-3 text-danger"></i>
                         <div>
                             <h5 class="fw-bold text-danger mb-1">Booking Submission Failed</h5>
-                            <p class="mb-0 fs-7 text-dark">${res.error} All your entered information has been preserved. Please try again or call our booking desk at <strong>+91 86696 52936</strong>.</p>
+                            <p class="mb-0 fs-7 text-dark">${res.error} All your entered information has been preserved. Please try again or call our booking desk at <strong>+91 91754 42121</strong>.</p>
                         </div>
                     </div>
                 `;
@@ -716,6 +716,218 @@
     }
 
     /**
+     * Connect Hero Booking / Search Bar Form (index.html, destination.html)
+     */
+    function initHeroBookingBar() {
+        const heroForms = document.querySelectorAll('.hero-booking-bar form');
+        heroForms.forEach(heroForm => {
+            if (heroForm.getAttribute('data-leads-bound')) return;
+            heroForm.setAttribute('data-leads-bound', 'true');
+
+            // Find or create a status feedback container
+            let statusContainer = heroForm.parentElement.querySelector('.hero-booking-status-wrap');
+            if (!statusContainer) {
+                statusContainer = document.createElement('div');
+                statusContainer.className = 'hero-booking-status-wrap text-center mt-3';
+                statusContainer.style.display = 'none';
+                heroForm.parentElement.appendChild(statusContainer);
+            }
+
+            heroForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                const submitBtn = heroForm.querySelector('button[type="submit"]');
+                const destInput = heroForm.querySelector('[name="destination"]') || 
+                                  heroForm.querySelector('[name="location"]') || 
+                                  heroForm.querySelector('#heroDestination') || 
+                                  heroForm.querySelector('.booking-col input[type="text"]');
+                const checkinInput = heroForm.querySelector('[name="checkin"]');
+                const checkoutInput = heroForm.querySelector('[name="checkout"]');
+                const categoryInput = heroForm.querySelector('[name="category"]');
+                const travelersInput = heroForm.querySelector('[name="travelers"]') || heroForm.querySelector('.select-input');
+                const travelersDisplay = heroForm.querySelector('.select-value');
+
+                const destination = destInput ? destInput.value.trim() : '';
+                const checkin = checkinInput ? checkinInput.value.trim() : '';
+                const checkout = checkoutInput ? checkoutInput.value.trim() : '';
+                const category = categoryInput ? categoryInput.value.trim() : '';
+                const travelers = (travelersDisplay && travelersDisplay.innerText.trim()) || 
+                                  (travelersInput ? travelersInput.value.trim() : '2 Adults, 1 Child');
+
+                // Button loading state
+                let originalBtnHtml = '';
+                if (submitBtn) {
+                    submitBtn.disabled = true;
+                    originalBtnHtml = submitBtn.innerHTML;
+                    submitBtn.innerHTML = '<span>Finding...</span> <i class="fa-solid fa-spinner fa-spin ms-1"></i>';
+                }
+
+                statusContainer.style.display = 'none';
+                statusContainer.innerHTML = '';
+
+                const payload = {
+                    destination: destination || (category ? `Category: ${category}` : 'All Destinations'),
+                    checkin: checkin || '',
+                    checkout: checkout || '',
+                    travelers: travelers || '',
+                    buttonType: 'form',
+                    type: 'form',
+                    source: 'hero_booking_bar',
+                    form_name: 'Hero Search & Booking Bar',
+                    page_url: window.location.href,
+                    submitted_at: new Date().toISOString()
+                };
+
+                const res = await submitLead(payload);
+
+                if (res.success) {
+                    if (submitBtn) {
+                        submitBtn.innerHTML = '<span>Found! Redirecting...</span> <i class="fa-solid fa-circle-check ms-1"></i>';
+                    }
+
+                    statusContainer.style.display = 'block';
+                    statusContainer.innerHTML = `
+                        <div class="alert alert-success d-inline-flex align-items-center gap-2 py-2 px-4 rounded-pill shadow-sm mb-0">
+                            <i class="fa-solid fa-circle-check text-success"></i>
+                            <span class="fs-8 fw-semibold text-dark">Search request submitted! Redirecting to available packages...</span>
+                        </div>
+                    `;
+
+                    // Prepare redirect URL with search parameters
+                    const targetUrl = new URL('destination.html', window.location.href);
+                    if (destination) targetUrl.searchParams.set('search', destination);
+                    if (checkin) targetUrl.searchParams.set('checkin', checkin);
+                    if (checkout) targetUrl.searchParams.set('checkout', checkout);
+                    if (travelers) targetUrl.searchParams.set('travelers', travelers);
+
+                    setTimeout(() => {
+                        window.location.href = targetUrl.href;
+                    }, 1000);
+                } else {
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalBtnHtml;
+                    }
+
+                    statusContainer.style.display = 'block';
+                    statusContainer.innerHTML = `
+                        <div class="alert alert-danger d-inline-flex align-items-center gap-2 py-2 px-4 rounded-pill shadow-sm mb-0">
+                            <i class="fa-solid fa-triangle-exclamation text-danger"></i>
+                            <span class="fs-8 fw-semibold text-dark">${res.error || 'Submission failed. Please try again.'}</span>
+                        </div>
+                    `;
+                }
+            });
+        });
+    }
+
+    /**
+     * Search Modal Multi-Field Inquiry & Search Form
+     */
+    function initSearchModalForm() {
+        const searchForm = document.getElementById('searchModalForm');
+        if (!searchForm) return;
+
+        const statusContainer = document.getElementById('searchModalStatus') || (function () {
+            const div = document.createElement('div');
+            div.id = 'searchModalStatus';
+            div.className = 'search-modal-status mt-3 text-center';
+            searchForm.appendChild(div);
+            return div;
+        })();
+
+        // Popular Searches chips auto-fill handling
+        const tagChips = document.querySelectorAll('.search-modal .search-tag-chip');
+        tagChips.forEach(chip => {
+            chip.addEventListener('click', function (e) {
+                e.preventDefault();
+                const query = this.getAttribute('data-search') || this.innerText.trim();
+                const destInput = searchForm.querySelector('[name="search"]');
+                const nameInput = searchForm.querySelector('[name="name"]');
+                if (destInput) {
+                    destInput.value = query;
+                    destInput.dispatchEvent(new Event('input', { bubbles: true }));
+                }
+                if (nameInput) {
+                    nameInput.focus();
+                }
+            });
+        });
+
+        searchForm.addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const submitBtn = searchForm.querySelector('button[type="submit"]');
+            const destInput = searchForm.querySelector('[name="search"]');
+            const nameInput = searchForm.querySelector('[name="name"]');
+            const phoneInput = searchForm.querySelector('[name="phone"]');
+
+            const destination = destInput ? destInput.value.trim() : '';
+            const name = nameInput ? nameInput.value.trim() : '';
+            const phone = phoneInput ? phoneInput.value.trim() : '';
+
+            if (!name) {
+                statusContainer.style.display = 'block';
+                statusContainer.innerHTML = `
+                    <div class="alert alert-warning d-inline-flex align-items-center gap-2 py-1.5 px-3 rounded-pill shadow-sm mb-0">
+                        <i class="fa-solid fa-triangle-exclamation text-warning"></i>
+                        <span class="fs-8 fw-semibold text-dark">Please enter your name.</span>
+                    </div>
+                `;
+                if (nameInput) nameInput.focus();
+                return;
+            }
+
+            const phoneDigits = phone.replace(/\D/g, '');
+            if (phoneDigits.length < 10) {
+                statusContainer.style.display = 'block';
+                statusContainer.innerHTML = `
+                    <div class="alert alert-warning d-inline-flex align-items-center gap-2 py-1.5 px-3 rounded-pill shadow-sm mb-0">
+                        <i class="fa-solid fa-triangle-exclamation text-warning"></i>
+                        <span class="fs-8 fw-semibold text-dark">Please enter a valid 10-digit contact number.</span>
+                    </div>
+                `;
+                if (phoneInput) phoneInput.focus();
+                return;
+            }
+
+            let originalBtnHtml = '';
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                originalBtnHtml = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<span>Searching...</span> <i class="fa-solid fa-spinner fa-spin ms-1"></i>';
+            }
+
+            statusContainer.style.display = 'none';
+
+            const payload = {
+                name: name,
+                phone: phone,
+                destination: destination || 'All Destinations',
+                buttonType: 'search_modal',
+                type: 'search',
+                source: 'search_modal',
+                form_name: 'Search Modal Inquiry',
+                page_url: window.location.href,
+                submitted_at: new Date().toISOString()
+            };
+
+            try {
+                await submitLead(payload);
+            } catch (err) {
+                console.warn('Lead submit error:', err);
+            }
+
+            // Navigate to destination.html with search parameters
+            const targetUrl = new URL('destination.html', window.location.href);
+            if (destination) {
+                targetUrl.searchParams.set('search', destination);
+            }
+            window.location.href = targetUrl.href;
+        });
+    }
+
+    /**
      * Initialize all lead integrations when DOM is ready
      */
     function init() {
@@ -724,6 +936,8 @@
         initTourBookingForm();
         initSidebarEnquiryForms();
         initNewsletterForms();
+        initHeroBookingBar();
+        initSearchModalForm();
     }
 
     if (document.readyState === 'loading') {

@@ -876,3 +876,33 @@ if (typeof Swiper !== "undefined" && document.querySelector(".adv-testi-swiper")
         }
     });
 }
+
+/* ============================================================
+   DESTINATIONS FILTER TABS (destination.html)
+   ============================================================ */
+const destFilterBtns = document.querySelectorAll(".dest-filter-btn");
+const destGridItems = document.querySelectorAll("#destinationsCardGrid .dest-item");
+if (destFilterBtns.length > 0 && destGridItems.length > 0) {
+    destFilterBtns.forEach(btn => {
+        btn.addEventListener("click", function() {
+            destFilterBtns.forEach(b => b.classList.remove("active"));
+            this.classList.add("active");
+            const filterVal = this.getAttribute("data-filter");
+
+            destGridItems.forEach(item => {
+                const itemCat = item.getAttribute("data-category");
+                if (filterVal === "all" || filterVal === itemCat) {
+                    item.style.display = "";
+                    item.classList.remove("d-none");
+                } else {
+                    item.style.display = "none";
+                    item.classList.add("d-none");
+                }
+            });
+
+            if (typeof AOS !== "undefined") {
+                AOS.refresh();
+            }
+        });
+    });
+}

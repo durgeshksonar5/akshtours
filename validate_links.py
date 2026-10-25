@@ -13,6 +13,7 @@ html_files = [
     'tour-phuket.html',
     'tour-kyoto.html',
     'tour-dubai.html',
+    'dubai-tour-package.html',
     'tour-switzerland.html',
     'tour-details.html',
     'destinations/destination-details.html'
