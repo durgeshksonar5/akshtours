@@ -4089,6 +4089,23 @@ a.hero-floating-badge:hover .hero-badge-arrow {
     color: var(--accent);
 }
 
+.footer-contact-item .content .fa-clock {
+    color: var(--accent) !important;
+    font-size: 13px;
+    margin-right: 5px;
+    vertical-align: -1px;
+    display: inline-block;
+}
+
+/* Ensure fa-regular fa-clock and all clock icons render sharply and clearly */
+.fa-regular.fa-clock,
+.fa-clock {
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 900 !important;
+    font-style: normal;
+    display: inline-block;
+}
+
 /* Titles with Accent Underline */
 
 .footer-widget-title {
@@ -8900,6 +8917,14 @@ html::-webkit-scrollbar-thumb:hover {
 .dest-bento-card {
     transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
     background-color: var(--primary);
+    min-height: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.dest-bento-card.large {
+    min-height: 440px;
 }
 
 .dest-bento-card:hover {
@@ -12288,3 +12313,163 @@ html::-webkit-scrollbar-thumb:hover {
 .tb-card-btn:hover .tb-btn-arrow {
     transform: translateX(4px);
 }
+
+/* ============================================================
+   DUBAI ICONIC 4 CATEGORIES & ADVENTURES CATALOG STYLING
+   ============================================================ */
+
+.dubai-tier-card {
+    background: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 20px;
+    padding: 32px 28px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.dubai-tier-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+    border-color: var(--accent);
+}
+
+.dubai-tier-card.featured-tier {
+    border: 2px solid var(--accent);
+    background: linear-gradient(180deg, #fffaf5 0%, #ffffff 100%);
+    box-shadow: 0 10px 30px rgba(255, 107, 0, 0.12);
+}
+
+.dubai-tier-badge {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 4px 12px;
+    border-radius: 50px;
+}
+
+.dubai-tier-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.dubai-tier-features {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 13.5px;
+    color: #475569;
+}
+
+.dubai-tier-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.dubai-tier-features li i {
+    font-size: 14px;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+/* Adventures & Thrills Catalog Grid */
+.adv-filter-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.adv-pill-btn {
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
+    color: #475569;
+    font-size: 12.5px;
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.adv-pill-btn:hover {
+    background: #f8fafc;
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+.adv-pill-btn.active {
+    background: var(--accent);
+    color: #ffffff;
+    border-color: var(--accent);
+    box-shadow: 0 4px 12px rgba(255, 107, 0, 0.3);
+}
+
+.activity-item-card {
+    background: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 16px;
+    padding: 16px 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    transition: all 0.3s ease;
+    height: 100%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.activity-item-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+    border-color: #cbd5e1;
+}
+
+.activity-number {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.activity-icon-wrap {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.activity-disclaimer-box {
+    background: #fffbeb;
+    border-left: 4px solid #f59e0b;
+    border-radius: 12px;
+    padding: 16px 20px;
+    font-size: 13.5px;
+    color: #92400e;
+}

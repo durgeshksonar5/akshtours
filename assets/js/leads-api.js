@@ -506,11 +506,37 @@
 
         // Read URL query parameters if coming from a tour or destination page
         const urlParams = new URLSearchParams(window.location.search);
-        const tourParam = urlParams.get('tour');
+        const tourParam = urlParams.get('tour') || urlParams.get('destination');
         const dateParam = urlParams.get('date');
         const guestsParam = urlParams.get('guests');
 
+        const destinationMap = {
+            'vietnam': { title: 'Vietnam Scenic Landscapes & Heritage', img: 'assets/images/destinations/vietnam.png', duration: '7 Days / 6 Nights' },
+            'bali': { title: 'Bali Tropical Island Paradise (Villas & Culture)', img: 'assets/images/destinations/bali.png', duration: '6 Days / 5 Nights' },
+            'thailand-explorer': { title: 'Thailand Explorer (Bangkok + Phuket)', img: 'assets/images/destinations/thailand.png', duration: '6 Days / 5 Nights' },
+            'thailand-beach': { title: 'Thailand Beach Escape (Phuket + Krabi)', img: 'assets/images/destinations/phuket.png', duration: '6 Days / 5 Nights' },
+            'bangkok': { title: 'Bangkok City Break (Temples & River Cruise)', img: 'assets/images/destinations/bangkok.png', duration: '4 Days / 3 Nights' },
+            'phuket': { title: 'Phuket Beach Escape (Island Speedboat & Old Town)', img: 'assets/images/destinations/phuket.png', duration: '5 Days / 4 Nights' },
+            'krabi': { title: 'Krabi Nature Escape (Railay Beach & Island-Hopping)', img: 'assets/images/destinations/krabi.jpg', duration: '5 Days / 4 Nights' },
+            'singapore': { title: 'Singapore Explorer (Marina Bay & Sentosa)', img: 'assets/images/destinations/singapore.png', duration: '5 Days / 4 Nights' },
+            'dubai': { title: 'Dubai Iconic Collection (05N/06D)', img: 'assets/images/destinations/dubai.png', duration: '6 Days / 5 Nights' }
+        };
+
         if (tourParam) {
+            const destKey = tourParam.toLowerCase();
+            const destInfo = destinationMap[destKey];
+            const previewCard = document.querySelector('.booking-tour-thumb');
+            const previewHeading = previewCard ? previewCard.closest('.bg-white')?.querySelector('h3') : null;
+            const previewDuration = previewCard ? previewCard.closest('.bg-white')?.querySelector('.fa-clock')?.parentElement : null;
+
+            if (destInfo) {
+                if (previewCard) previewCard.src = destInfo.img;
+                if (previewHeading) previewHeading.textContent = destInfo.title;
+                if (previewDuration) previewDuration.innerHTML = `<i class="fa-solid fa-clock text-accent me-1"></i> ${destInfo.duration}`;
+            } else {
+                if (previewHeading) previewHeading.textContent = tourParam;
+            }
+
             const tourSummaryTitle = document.querySelector('.dest-sidebar-card .text-muted span:first-child');
             if (tourSummaryTitle) {
                 tourSummaryTitle.innerText = `${tourParam}`;

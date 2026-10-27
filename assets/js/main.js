@@ -506,7 +506,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     /* ============================================================
-       11. PROMO BANNER LIVE COUNTDOWN TIMERS
+       11. PROMO BANNER LIVE COUNTDOWN TIMERS (Target: 21 November)
        ============================================================ */
     const countdownElements = {
         days: document.getElementById("promo-days"),
@@ -515,12 +515,21 @@ document.addEventListener("DOMContentLoaded", function() {
         seconds: document.getElementById("promo-seconds")
     };
     if (countdownElements.days) {
-        const endDate = new Date().getTime() + (15 * 24 * 60 * 60 * 1000);
-        const timer = setInterval(function() {
-            const now = new Date().getTime();
-            const distance = endDate - now;
+        const now = new Date();
+        let targetYear = now.getFullYear();
+        let targetDate = new Date(targetYear, 10, 21, 0, 0, 0); // Month 10 is November (0-indexed)
+        if (now.getTime() > targetDate.getTime()) {
+            targetDate = new Date(targetYear + 1, 10, 21, 0, 0, 0);
+        }
+        const endDate = targetDate.getTime();
+        function updatePromoTimer() {
+            const current = new Date().getTime();
+            const distance = endDate - current;
             if (distance < 0) {
-                clearInterval(timer);
+                countdownElements.days.innerText = "00";
+                countdownElements.hours.innerText = "00";
+                countdownElements.minutes.innerText = "00";
+                countdownElements.seconds.innerText = "00";
                 return;
             }
             const d = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -531,7 +540,9 @@ document.addEventListener("DOMContentLoaded", function() {
             countdownElements.hours.innerText = h.toString().padStart(2, "0");
             countdownElements.minutes.innerText = m.toString().padStart(2, "0");
             countdownElements.seconds.innerText = s.toString().padStart(2, "0");
-        }, 1000);
+        }
+        updatePromoTimer();
+        setInterval(updatePromoTimer, 1000);
     }
 
     /* Live Countdown Timer for Promo V2 (index-2.html) */
@@ -878,7 +889,7 @@ if (typeof Swiper !== "undefined" && document.querySelector(".adv-testi-swiper")
 }
 
 /* ============================================================
-   DESTINATIONS FILTER TABS (destination.html)
+   DESTINATIONS FILTER TABS & SEARCH (destination.html)
    ============================================================ */
 const destFilterBtns = document.querySelectorAll(".dest-filter-btn");
 const destGridItems = document.querySelectorAll("#destinationsCardGrid .dest-item");
@@ -890,8 +901,9 @@ if (destFilterBtns.length > 0 && destGridItems.length > 0) {
             const filterVal = this.getAttribute("data-filter");
 
             destGridItems.forEach(item => {
-                const itemCat = item.getAttribute("data-category");
-                if (filterVal === "all" || filterVal === itemCat) {
+                const itemCat = item.getAttribute("data-category") || "";
+                const categories = itemCat.split(" ");
+                if (filterVal === "all" || itemCat === filterVal || categories.includes(filterVal)) {
                     item.style.display = "";
                     item.classList.remove("d-none");
                 } else {
@@ -905,4 +917,93 @@ if (destFilterBtns.length > 0 && destGridItems.length > 0) {
             }
         });
     });
+
+    // Live destination search filter
+    const destSearchInput = document.querySelector('.hero-booking-bar input[name="location"]');
+    if (destSearchInput) {
+        destSearchInput.addEventListener("input", function() {
+            const query = this.value.toLowerCase().trim();
+            destGridItems.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                const categories = (item.getAttribute("data-category") || "").toLowerCase();
+                if (!query || text.includes(query) || categories.includes(query)) {
+                    item.style.display = "";
+                    item.classList.remove("d-none");
+                } else {
+                    item.style.display = "none";
+                    item.classList.add("d-none");
+                }
+            });
+            if (typeof AOS !== "undefined") {
+                AOS.refresh();
+            }
+        });
+    }
+
+    const destSearchForm = document.querySelector('.hero-booking-bar form[action="destination.html"]');
+    if (destSearchForm) {
+        destSearchForm.addEventListener("submit", function(e) {
+            e.preventDefault();
+            const input = this.querySelector('input[name="location"]');
+            if (input) {
+                input.dispatchEvent(new Event("input"));
+                const target = document.getElementById("destinationsCardGrid");
+                if (target) {
+                    target.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+            }
+        });
+    }
+
+    // Auto-trigger filter if specified in URL query string (e.g. ?filter=rajasthan)
+    const urlParams = new URLSearchParams(window.location.search);
+    const filterParam = urlParams.get("filter");
+    if (filterParam) {
+        const matchingBtn = document.querySelector(`.dest-filter-btn[data-filter="${filterParam}"]`);
+        if (matchingBtn) {
+            matchingBtn.click();
+        } else {
+            destGridItems.forEach(item => {
+                const itemCat = item.getAttribute("data-category") || "";
+                const categories = itemCat.split(" ");
+                if (itemCat === filterParam || categories.includes(filterParam)) {
+                    item.style.display = "";
+                    item.classList.remove("d-none");
+                } else {
+                    item.style.display = "none";
+                    item.classList.add("d-none");
+                }
+            });
+        }
+    }
 }
+
+/* ============================================================
+   DUBAI & ABU DHABI ADVENTURES FILTER PILLS
+   ============================================================ */
+const advPillBtns = document.querySelectorAll(".adv-pill-btn");
+const activityCards = document.querySelectorAll(".activity-card-col");
+if (advPillBtns.length > 0 && activityCards.length > 0) {
+    advPillBtns.forEach(btn => {
+        btn.addEventListener("click", function() {
+            advPillBtns.forEach(b => b.classList.remove("active"));
+            this.classList.add("active");
+            const filter = this.getAttribute("data-adv-filter");
+
+            activityCards.forEach(card => {
+                const cats = (card.getAttribute("data-adv-cat") || "").split(" ");
+                if (filter === "all" || cats.includes(filter)) {
+                    card.style.display = "";
+                    card.classList.remove("d-none");
+                } else {
+                    card.style.display = "none";
+                    card.classList.add("d-none");
+                }
+            });
+
+            if (typeof AOS !== "undefined") {
+                AOS.refresh();
+            }
+        });
+    });
+}
